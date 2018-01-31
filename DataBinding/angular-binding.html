@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <html lang="en">
+   <head>
+     <title>Angular JS Tutorial- Data Binding Methods</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 
+	 <link rel="stylesheet" type="text/css" href="angular-binding.css">
+     <!-- Angular app linking -->
+     <script type = "text/javascript" src="angular-binding.js"></script> 
+   </head>
+
+   <!-- Custom App Declaration-->
+   <body ng-app="myApp">
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <img src="logo.png" alt="Valuebound Inc">
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" ng-controller= "myController">
+       <div class="row">
+        <!-- Custom module Controller -->
+        <div class="col-lg-4">
+             <strong>One-Way Data Binding</strong></br>             
+             <!-- fetching the data from model to view -->			 
+			 {{name}}
+		</div>
+		<div class="col-lg-4">
+			 <strong>Two-Way Data Binding</strong></br>             
+			 <!-- fetching the data from model to view & View to model, back & forth-->			 	
+			 <input type= text ng-model="user"/>             			 
+			 <p>You are <i>{{user}}</i> </p>
+        </div>
+       
+	    <div class="col-lg-4">
+			 <strong>One-Time Data Binding</strong></br>             
+			 <!-- fetching the data from model only once-->			 	
+			 <input type="text" ng-model="person">
+             <p>You are {{::person}} </p>
+        </div>
+	  </div>
+    </div>
+   </body>
+</html>
